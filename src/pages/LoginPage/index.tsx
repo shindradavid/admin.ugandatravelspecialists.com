@@ -16,6 +16,7 @@ import { APIError } from '../../lib/errors';
 const loginSchema = z.object({
   phoneNumber: z.string().min(10, 'Phone number is required'),
   password: z.string().min(1, 'Password is required').min(6, 'Password must be at least 6 characters long'),
+  district: z.string(),
 });
 
 type LoginFormInputs = z.infer<typeof loginSchema>;
@@ -34,6 +35,7 @@ const LoginPage: React.FC = () => {
     defaultValues: {
       phoneNumber: '',
       password: '',
+      district: '',
     },
   });
 
@@ -47,8 +49,6 @@ const LoginPage: React.FC = () => {
   }
 
   const onSubmit = async (data: LoginFormInputs) => {
-    console.log(data);
-
     setFormMessage(null);
 
     try {

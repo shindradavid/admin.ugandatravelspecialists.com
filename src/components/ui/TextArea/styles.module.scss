@@ -1,0 +1,48 @@
+@use '../../../styles/utils';
+
+.formGroup {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 8px;
+
+  label {
+    display: block;
+    font-family: var(--ff-body);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--clr-txt-primary-on-bg-primary);
+    margin-bottom: 8px;
+  }
+
+  textarea {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--clr-border-secondary-on-bg-primary);
+    border-radius: 8px;
+    font-family: var(--ff-body);
+    font-size: var(--fs-base);
+    background-color: var(--clr-bg-secondary);
+    color: var(--clr-txt-primary-on-bg-secondary);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--clr-accent-1);
+      box-shadow: 0 0 0 3px rgba(var(--clr-accent-1-rgb), 0.2);
+    }
+
+    &.inputError {
+      border-color: var(--clr-error);
+      box-shadow: 0 0 0 1px var(--clr-error);
+    }
+  }
+}
+
+.inputErrorMessage {
+  font-family: var(--ff-body);
+  font-size: var(--fs-sm);
+  color: var(--clr-error);
+  margin-top: 2px;
+  margin-bottom: 2px;
+  text-align: left;
+}

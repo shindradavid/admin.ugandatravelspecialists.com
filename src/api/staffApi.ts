@@ -15,8 +15,8 @@ export const useStaffRole = () => {
   return useQuery({
     queryKey: [staffRolesQueryKey],
     queryFn: async () => {
-      const axiosData: ApiResponse<Staff[]> = (await apiClient.get('/staff/roles')).data;
-      const staffRoles = axiosData.payload;
+      const apiResponse = (await apiClient.get<ApiResponse<Staff[]>>('/staff/roles')).data;
+      const staffRoles = apiResponse.payload;
       return staffRoles;
     },
     initialData: [],
@@ -34,15 +34,13 @@ export const useCreateStaffRoleMutation = ({ onError, onSuccess }: MutationArgs)
 
   return useMutation({
     mutationFn: async (payload: CreateStaffRoleMutationData) => {
-      const axiosData: ApiResponse<StaffRole> = (await apiClient.post('/staff/roles', payload)).data;
-
-      return axiosData;
+      const apiResponse = (await apiClient.post<ApiResponse<StaffRole>>('/staff/roles', payload)).data;
+      return apiResponse;
     },
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: [staffRolesQueryKey] });
     },
     onError: (error) => {
-      console.log(error);
       onError(error.message);
     },
     onSuccess: (data) => {
@@ -68,8 +66,8 @@ export const useStaffMembers = () => {
   return useQuery({
     queryKey: [staffMembersQueryKey],
     queryFn: async () => {
-      const axiosData: ApiResponse<Staff[]> = (await apiClient.get('/staff')).data;
-      const staff = axiosData.payload;
+      const apiResponse = (await apiClient.get<ApiResponse<Staff[]>>('/staff')).data;
+      const staff = apiResponse.payload;
       return staff;
     },
     initialData: [],
@@ -98,14 +96,14 @@ export const useCreateStaffMemberMutation = ({ onError, onSuccess }: MutationArg
       formData.append('roleId', payload.roleId);
       formData.append('photo', payload.photo);
 
-      const axiosData: ApiResponse<Staff> = (
-        await apiClient.post('/staff', formData, {
+      const apiResponse = (
+        await apiClient.post<ApiResponse<Staff>>('/staff', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
         })
       ).data;
-      return axiosData;
+      return apiResponse;
     },
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: [staffMembersQueryKey] });

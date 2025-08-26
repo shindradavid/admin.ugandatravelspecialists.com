@@ -2,7 +2,7 @@
   font-size: var(--fs-sm);
   font-weight: 700;
   color: var(--clr-txt-primary-on-bg-primary);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
 }
 
 .trigger {
@@ -32,6 +32,7 @@
   border-radius: 6px;
   box-shadow: 0 1px 6px var(--clr-shadow);
   z-index: 10000;
+  padding: var(--spacing-xs) var(--spacing-sm);
 }
 
 .viewport {
