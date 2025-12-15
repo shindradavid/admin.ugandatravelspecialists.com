@@ -1,93 +1,95 @@
 @use '../../styles/utils';
 
 .statsSection {
-  background-color: var(--clr-bg-primary);
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 14px; // Consistent spacing after the section
-  box-shadow: 0 4px 15px var(--clr-shadow);
+  margin-bottom: var(--spacing-xl);
 
   h2 {
-    // Title for the entire stats section, if provided
     font-family: var(--ff-headings);
-    font-size: var(--fs-md);
+    font-size: var(--fs-lg);
     font-weight: var(--fw-bold);
     color: var(--clr-txt-primary-on-bg-primary);
-    margin-bottom: 14px;
-    text-align: center; // Mobile-first center
-    @include utils.respond-to('lg-screens') {
-      text-align: left; // Left align on desktop
-    }
+    margin-bottom: var(--spacing-lg);
+    text-align: left;
+    letter-spacing: -0.01em;
   }
 }
 
 .statsGrid {
   display: grid;
-  grid-template-columns: 1fr; // Single column on mobile
-  gap: 14px;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
 
   @include utils.respond-to('md-screens') {
     grid-template-columns: repeat(2, 1fr);
   }
+
   @include utils.respond-to('lg-screens') {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 .statCard {
-  background-color: var(--clr-bg-secondary);
-  border-radius: 10px;
-  padding: 14px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
+  background-color: var(--clr-surface-1);
+  border-radius: var(--radius-base);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--clr-border-on-surface);
+  transition: all var(--animation-speed-fast) ease;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start; // Align left for cleaner look
+  position: relative;
+  overflow: hidden;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--clr-accent-1);
   }
 
   .statIconWrapper {
-    background-color: #e6f5f1; // Light green for icon background (fixed value for now)
-    border-radius: 50%;
-    padding: 15px;
-    margin-bottom: 15px;
+    background-color: var(--clr-bg-accent-1); // Use theme accent bg
+    color: var(--clr-txt-primary-on-bg-accent-1);
+    border-radius: var(--radius-sm);
+    padding: 10px;
+    margin-bottom: var(--spacing-md);
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: var(--shadow-sm);
   }
 
   .statIcon {
-    color: var(--clr-accent-1); // Accent color for icon
+    color: inherit;
   }
 
   .statValue {
     font-family: var(--ff-headings);
-    font-size: var(--fs-md);
+    font-size: var(--fs-2xl); // Larger value
     font-weight: var(--fw-bold);
-    color: var(--clr-accent-2); // Using secondary accent for values for variety
-    margin-bottom: 5px;
-
-    @include utils.respond-to('lg-screens') {
-      font-size: var(--fs-lg);
-    }
+    color: var(--clr-txt-primary-on-surface);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.1;
   }
 
   .statTitle {
     font-family: var(--ff-body);
-    font-size: var(--fs-base);
-    font-weight: var(--fw-semibold);
-    color: var(--clr-txt-primary-on-bg-secondary);
-    margin-bottom: 5px;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--clr-txt-secondary-on-surface);
+    margin-bottom: var(--spacing-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .statDescription {
     font-family: var(--ff-body);
-    font-size: var(--fs-sm);
-    color: var(--clr-txt-secondary-on-bg-secondary);
+    font-size: var(--fs-xs);
+    color: var(--clr-success); // Assume positive growth usually, or make dynamic
+    font-weight: var(--fw-medium);
     margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 }

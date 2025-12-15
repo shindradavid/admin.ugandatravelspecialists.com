@@ -33,11 +33,13 @@
   /* border-radius */
   --radius-xxs: 4px;
   --radius-xs: 8px;
-  --radius-sm: 16px;
-  --radius-base: 24px;
-  --radius-md: 32px;
-  --radius-lg: 40px;
+  --radius-sm: 12px;
+  --radius-base: 16px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
   --radius-xl: 48px;
+  --radius-full: 9999px;
+  
   /* animation timing functions */
   --animation-timing-fn-linear-curve: cubic-bezier(0, 0, 1, 1);
   --animation-timing-fn-ease-in-curve: cubic-bezier(0.8, 0.2, 0.6, 1);
@@ -64,18 +66,48 @@
   --animation-duration-400: 400ms;
   --animation-duration-450: 450ms;
   --animation-duration-500: 500ms;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px var(--clr-shadow), 0 2px 4px -2px var(--clr-shadow);
-  --shadow-lg: 0 10px 15px -3px var(--clr-shadow), 0 4px 6px -4px var(--clr-shadow);
-  --shadow-xl: 0 20px 25px -5px var(--clr-shadow), 0 8px 10px -6px var(--clr-shadow);
+  
+  /* Shadows - Premium Smooth Shadows */
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+
+  --shadow-sm: 
+    0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  
+  --shadow: 
+    0 3px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
+    
+  --shadow-md: 
+    0 -1px 3px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+    
+  --shadow-lg: 
+    0 -2px 5px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 1px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 2px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 9px 9px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 16px 16px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%));
+    
+  --shadow-xl: 
+    0 -1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 2px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 10px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 20px 20px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 40px 40px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+
   --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 
   // UI
-  --stats-section-radius: 12px;
-  --stats-section-padding: 14px;
-  --stats-section-margin-bottom: 14px;
+  --stats-section-radius: var(--radius-base);
+  --stats-section-padding: var(--spacing-lg);
+  --stats-section-margin-bottom: var(--spacing-lg);
   --stats-card-title: var(--fs-md);
   --stats-card-description: var(--fs-sm);
-  --stats-card-value: var(--fs-md);
+  --stats-card-value: var(--fs-xl);
 }

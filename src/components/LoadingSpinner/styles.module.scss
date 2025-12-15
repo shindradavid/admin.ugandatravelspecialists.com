@@ -1,0 +1,36 @@
+@use '../../styles/utils' as *;
+
+.spinnerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-4xl);
+
+  &.fullScreen {
+    min-height: 60vh;
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  color: var(--clr-accent-1);
+}
+
+.text {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  color: var(--clr-txt-secondary-on-bg-primary);
+  margin: 0;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

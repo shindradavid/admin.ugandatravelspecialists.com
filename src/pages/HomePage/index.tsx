@@ -26,13 +26,11 @@ const DUMMY_METRICS = [
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
 
-  const handleLinkClick = (path) => {
-    // In a real application, you would use this to navigate
-    // navigate(path);
-    console.log(`Navigating to ${path}`);
+  const handleLinkClick = (path: string) => {
+    navigate(path);
   };
 
-  const renderBookingItems = (bookings) => {
+  const renderBookingItems = (bookings: typeof DUMMY_CAR_HIRES) => {
     return bookings.length > 0 ? (
       bookings.map((booking) => (
         <div key={booking.id} className={styles.bookingItem}>
@@ -50,6 +48,12 @@ const HomePage: React.FC = () => {
 
   return (
     <div className={styles.homePage}>
+      {/* Welcome Header */}
+      <div className={styles.welcomeHeader}>
+        <h1 className={styles.welcomeTitle}>Dashboard Overview</h1>
+        <p className={styles.welcomeSubtitle}>Monitor your bookings, metrics, and quick actions</p>
+      </div>
+
       {/* Main Content Area */}
       <div className={styles.mainContent}>
         {/* Section 1: Upcoming Bookings */}
@@ -88,7 +92,7 @@ const HomePage: React.FC = () => {
         </div>
 
         {/* Section 2: Key Metrics */}
-        <div className={styles.sectionCard}>
+        <div className={`${styles.sectionCard} ${styles.metricsSection}`}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Key Metrics</h2>
           </div>
@@ -104,14 +108,14 @@ const HomePage: React.FC = () => {
         </div>
 
         {/* Section 3: Quick Actions */}
-        <div className={styles.sectionCard}>
+        <div className={`${styles.sectionCard} ${styles.actionsSection}`}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Quick Actions</h2>
           </div>
           <div className={styles.quickActionsGrid}>
-            <div className={styles.actionCard} onClick={() => console.log('Navigating to Add New Booking')}>
+            <div className={styles.actionCard} onClick={() => handleLinkClick('/cars/add')}>
               <PlusCircle size={24} />
-              <p>Add New Booking</p>
+              <p>Add New Car</p>
             </div>
             <div className={styles.actionCard} onClick={() => handleLinkClick('/destinations')}>
               <MapPin size={24} />

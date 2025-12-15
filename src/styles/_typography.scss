@@ -5,7 +5,7 @@
 :root {
   // font-family
   --ff-display: 'Inter', serif;
-  --ff-mono: monospace;
+  --ff-mono: 'Fira Code', monospace;
   --ff-sans: 'Inter', Helvetica, Arial, sans-serif;
 
   --ff-headings: 'Inter', serif;
@@ -32,16 +32,22 @@
   --fw-bold: 700;
   --fw-extrabold: 800;
   --fw-black: 900;
+
+  // Line heights
+  --lh-tight: 1.2;
+  --lh-base: 1.6;
+  --lh-relaxed: 1.75;
 }
 
 body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
+  line-height: var(--lh-base);
   font-size: var(--fs-base);
   font-family: var(--ff-body);
   font-weight: var(--fw-normal);
+  color: var(--clr-txt-primary-on-bg-primary);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -53,4 +59,37 @@ h4,
 h5,
 h6 {
   font-family: var(--ff-headings);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--clr-txt-primary-on-bg-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: var(--fs-3xl);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--fs-2xl);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--fs-xl);
+  letter-spacing: -0.01em;
+}
+
+h4 {
+  font-size: var(--fs-lg);
+}
+
+h5 {
+  font-size: var(--fs-md);
+}
+
+h6 {
+  font-size: var(--fs-base);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }

@@ -5,45 +5,55 @@
   color: var(--clr-txt-primary-on-bg-primary);
   min-height: calc(100vh - var(--header-height));
   font-family: var(--ff-body);
-  padding-top: var(--spacing-8xl);
-  padding-bottom: var(--spacing-8xl);
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  border-radius: var(--radius-sm);
   @include add-section-lr-padding();
 }
 
 .formContainer {
   background-color: var(--clr-bg-secondary);
   border-radius: var(--radius-lg);
-  box-shadow: 0 4px 10px var(--clr-shadow);
-  padding: var(--spacing-6xl);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: var(--spacing-4xl);
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
+  border: 1px solid var(--clr-border-primary-on-bg-secondary);
+
+  @include respond-to('md-screens') {
+    padding: var(--spacing-5xl);
+  }
 }
 
 .header {
-  text-align: center;
-  margin-bottom: var(--spacing-6xl);
+  text-align: left;
+  margin-bottom: var(--spacing-5xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--clr-border-primary-on-bg-secondary);
 
   h1 {
     font-family: var(--ff-headings);
-    font-size: var(--fs-3xl);
+    font-size: var(--fs-2xl);
     font-weight: var(--fw-bold);
-    color: var(--clr-accent-2);
-    margin-bottom: var(--spacing-md);
+    color: var(--clr-txt-primary-on-bg-secondary);
+    margin: 0 0 var(--spacing-xs) 0;
   }
 
   p {
+    font-family: var(--ff-body);
     font-size: var(--fs-base);
     color: var(--clr-txt-secondary-on-bg-secondary);
+    margin: 0;
   }
 }
 
 .addForm {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-4xl);
+  gap: var(--spacing-xl);
 }
 
 .formGroup {
@@ -85,6 +95,126 @@
   cursor: pointer;
   transition: background-color var(--animation-duration-200) var(--animation-fn-ease);
   margin-top: var(--spacing-md);
+}
+
+.itinerarySection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background-color: var(--clr-bg-primary);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--clr-border-primary-on-bg-secondary);
+}
+
+.itineraryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.itineraryLabel {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-txt-primary-on-bg-primary);
+}
+
+.addItineraryButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--clr-accent-1);
+  color: var(--clr-txt-primary-on-accent-1);
+  border: none;
+  border-radius: var(--radius-xs);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: background-color var(--animation-duration-200) var(--animation-fn-ease);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.itineraryItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background-color: var(--clr-bg-secondary);
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--clr-border-primary-on-bg-primary);
+}
+
+.itineraryItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itineraryItemNumber {
+  font-family: var(--ff-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-txt-secondary-on-bg-secondary);
+}
+
+.removeItineraryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xs);
+  background-color: transparent;
+  color: var(--clr-txt-secondary-on-bg-secondary);
+  border: 1px solid var(--clr-border-primary-on-bg-secondary);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all var(--animation-duration-200) var(--animation-fn-ease);
+
+  &:hover {
+    background-color: var(--clr-bg-accent-2);
+    color: var(--clr-txt-primary-on-accent-2);
+    border-color: var(--clr-accent-2);
+  }
+}
+
+.itineraryInput {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--clr-border-primary-on-bg-secondary);
+  background-color: var(--clr-bg-primary);
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  color: var(--clr-txt-primary-on-bg-primary);
+
+  &:focus {
+    outline: none;
+    border-color: var(--clr-accent-1);
+    box-shadow: 0 0 0 2px rgba(var(--clr-accent-1), 0.2);
+  }
+}
+
+.itineraryTextarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--clr-border-primary-on-bg-secondary);
+  background-color: var(--clr-bg-primary);
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  color: var(--clr-txt-primary-on-bg-primary);
+  resize: vertical;
+
+  &:focus {
+    outline: none;
+    border-color: var(--clr-accent-1);
+    box-shadow: 0 0 0 2px rgba(var(--clr-accent-1), 0.2);
+  }
 }
 
 // Custom alert box styling

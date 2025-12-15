@@ -3,6 +3,7 @@
 @use './typography';
 @use './theme';
 @use './ui';
+@use './components'; // This imports the new _components.scss file I created in src/styles/
 @use './components/button';
 @use './components/carousel';
 @use './components/form';

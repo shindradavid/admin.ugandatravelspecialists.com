@@ -1,0 +1,109 @@
+@use './variables' as *;
+@use './theme' as *;
+@use './typography' as *;
+
+// Card Component
+.card {
+    background-color: var(--clr-surface-1);
+    border-radius: var(--radius-base);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--clr-border-on-surface);
+    padding: var(--spacing-lg);
+    transition: transform var(--animation-speed-fast) ease, box-shadow var(--animation-speed-fast) ease;
+
+    &:hover {
+        box-shadow: var(--shadow-md);
+    }
+}
+
+// Buttons
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-sm);
+    font-family: var(--ff-body);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-sm);
+    cursor: pointer;
+    transition: all var(--animation-speed-fast) ease;
+    border: 1px solid transparent;
+    text-decoration: none;
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    &--primary {
+        background-color: var(--clr-bg-accent-1);
+        color: var(--clr-txt-primary-on-bg-accent-1);
+
+        &:hover:not(:disabled) {
+            background-color: var(--clr-bg-accent-1-hover);
+            box-shadow: var(--shadow-sm);
+        }
+    }
+
+    &--secondary {
+        background-color: var(--clr-bg-accent-2);
+        color: var(--clr-txt-primary-on-bg-accent-2);
+
+        &:hover:not(:disabled) {
+            background-color: var(--clr-bg-accent-2-hover);
+            box-shadow: var(--shadow-sm);
+        }
+    }
+
+    &--outline {
+        background-color: transparent;
+        border-color: var(--clr-border-secondary-on-bg-primary);
+        color: var(--clr-txt-primary-on-bg-primary);
+
+        &:hover:not(:disabled) {
+            background-color: var(--clr-surface-2);
+            border-color: var(--clr-txt-secondary-on-bg-primary);
+        }
+    }
+
+    &--ghost {
+        background-color: transparent;
+        color: var(--clr-txt-secondary-on-bg-primary);
+
+        &:hover:not(:disabled) {
+            background-color: var(--clr-surface-2);
+            color: var(--clr-txt-primary-on-bg-primary);
+        }
+    }
+}
+
+// Badges / Chips
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    line-height: 1;
+
+    &--success {
+        background-color: var(--clr-bg-success);
+        color: var(--clr-txt-primary-on-bg-success);
+        border: 1px solid var(--clr-border-primary-on-bg-success);
+    }
+
+    &--warning {
+        background-color: hsla(41, 96%, 40%, 0.1);
+        color: hsl(41, 96%, 40%);
+        border: 1px solid hsl(41, 96%, 40%);
+    }
+
+    &--error {
+        background-color: var(--clr-bg-error);
+        color: var(--clr-txt-primary-on-bg-error);
+        border: 1px solid var(--clr-border-primary-on-bg-error);
+    }
+}

@@ -106,6 +106,7 @@ const AddCarPage: React.FC = () => {
       <div className={styles.formContainer}>
         <div className={styles.header}>
           <h1>Add New Car</h1>
+          <p>Fill in the details below to add a new car to your fleet.</p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className={styles.addForm}>

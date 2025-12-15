@@ -1,0 +1,65 @@
+@use '../../styles/utils' as *;
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-8xl) var(--spacing-4xl);
+  min-height: 400px;
+}
+
+.iconContainer {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background-color: var(--clr-bg-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: var(--clr-txt-secondary-on-bg-primary);
+  opacity: 0.5;
+}
+
+.title {
+  font-family: var(--ff-headings);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--clr-txt-primary-on-bg-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.description {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  color: var(--clr-txt-secondary-on-bg-primary);
+  margin: 0 0 var(--spacing-xl) 0;
+  max-width: 400px;
+}
+
+.actionButton {
+  background-color: var(--clr-accent-1);
+  color: var(--clr-txt-primary-on-accent-1);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  border-radius: var(--radius-xs);
+  border: none;
+  cursor: pointer;
+  transition: all var(--animation-duration-200) var(--animation-fn-ease);
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(var(--clr-accent-1-rgb), 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+

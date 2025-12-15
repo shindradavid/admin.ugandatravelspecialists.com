@@ -17,32 +17,42 @@
 
 .formContainer {
   background-color: var(--clr-bg-secondary);
-  border-radius: var(--radius-sm);
-  box-shadow: 0 4px 10px var(--clr-shadow);
-  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: var(--spacing-4xl);
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
+  border: 1px solid var(--clr-border-primary-on-bg-secondary);
 
   @include respond-to('md-screens') {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-5xl);
   }
 }
 
 .header {
-  text-align: center;
-  margin-bottom: var(--spacing-md);
+  text-align: left;
+  margin-bottom: var(--spacing-5xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--clr-border-primary-on-bg-secondary);
 
   h1 {
     font-family: var(--ff-headings);
-    font-size: var(--fs-lg);
+    font-size: var(--fs-2xl);
     font-weight: var(--fw-bold);
-    color: var(--clr-accent-2);
-    margin-bottom: var(--spacing-md);
+    color: var(--clr-txt-primary-on-bg-secondary);
+    margin: 0 0 var(--spacing-xs) 0;
+  }
+
+  p {
+    font-family: var(--ff-body);
+    font-size: var(--fs-base);
+    color: var(--clr-txt-secondary-on-bg-secondary);
+    margin: 0;
   }
 }
 
 .addForm {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-xl);
 }

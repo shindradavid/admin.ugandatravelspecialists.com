@@ -2,56 +2,68 @@
   --clr-shadow: #42424230;
 
   /**** ACCENT COLORS ****/
-  --clr-accent-1: #63ab45;
-  --clr-accent-2: #f7921e;
+  // Darkened for better contrast (WCAG AA)
+  --clr-accent-1: #2e7d32; // Darker Green
+  --clr-accent-1-hover: #1b5e20;
+  --clr-accent-2: #e65100; // Darker Orange
+  --clr-accent-2-hover: #bf360c;
 
   /**** STATUS COLORS ****/
   --clr-error: hsl(0, 74%, 42%);
   --clr-success: hsl(142, 72%, 29%);
-  --clr-info: #2463eb;
-  --clr-warning: hsl(41, 96%, 40%);
+  --clr-info: #1565c0; // Darker Blue
+  --clr-warning: hsl(41, 96%, 30%); // Darker Yellow/Orange
 
   /**** BACKGROUND COLORS ****/
 
-  // Primary Background
-  --clr-bg-primary: hsl(0, 0%, 100%);
-  --clr-txt-primary-on-bg-primary: hsl(0, 0%, 0%);
-  --clr-txt-secondary-on-bg-primary: hsl(0, 0%, 16%);
-  --clr-border-primary-on-bg-primary: hsl(0, 0%, 0%);
-  --clr-border-secondary-on-bg-primary: hsl(0, 0%, 16%);
+  // Primary Background (App Background)
+  --clr-bg-primary: #f8f9fa; // Slightly off-white
+  --clr-txt-primary-on-bg-primary: #121212; // Almost black for high contrast
+  --clr-txt-secondary-on-bg-primary: #424242; // Dark Grey
+  --clr-border-primary-on-bg-primary: #e0e0e0;
+  --clr-border-secondary-on-bg-primary: #bdbdbd;
 
-  // Secondary Background
-  --clr-bg-secondary: hsl(0, 0%, 92%);
-  --clr-txt-primary-on-bg-secondary: hsl(0, 0%, 0%);
-  --clr-txt-secondary-on-bg-secondary: hsl(0, 0%, 16%);
-  --clr-border-primary-on-bg-secondary: hsl(0, 0%, 0%);
-  --clr-border-secondary-on-bg-secondary: hsl(0, 0%, 16%);
+  // Secondary Background (Sidebar/Dark Areas)
+  --clr-bg-secondary: #0f172a; // Deep Slate Blue (High contrast dark)
+  --clr-txt-primary-on-bg-secondary: #ffffff;
+  --clr-txt-secondary-on-bg-secondary: #cbd5e1; // Light Grey-Blue
+  --clr-border-primary-on-bg-secondary: #334155;
+  --clr-border-secondary-on-bg-secondary: #475569;
+
+  // Surface Colors (Cards, Modals)
+  --clr-surface-1: #ffffff;
+  --clr-surface-2: #f1f5f9;
+  --clr-surface-3: #e2e8f0;
+
+  --clr-txt-primary-on-surface: #0f172a;
+  --clr-txt-secondary-on-surface: #475569;
+  --clr-border-on-surface: #e2e8f0;
 
   // Accent-1 Background (Primary Action)
   --clr-bg-accent-1: var(--clr-accent-1);
-  --clr-txt-primary-on-bg-accent-1: hsl(0, 0%, 98%);
-  --clr-txt-secondary-on-bg-accent-1: hsl(0, 0%, 86%);
-  --clr-border-primary-on-bg-accent-1: hsl(0, 0%, 86%);
-  --clr-border-secondary-on-bg-accent-1: hsl(0, 0%, 72%);
+  --clr-bg-accent-1-hover: var(--clr-accent-1-hover);
+  --clr-txt-primary-on-bg-accent-1: #ffffff;
+  --clr-txt-secondary-on-bg-accent-1: #e8f5e9;
+  --clr-border-primary-on-bg-accent-1: #a5d6a7;
 
   // Accent-2 Background (Secondary Action)
   --clr-bg-accent-2: var(--clr-accent-2);
-  --clr-txt-primary-on-bg-accent-2: hsl(0, 0%, 96%);
-  --clr-txt-secondary-on-bg-accent-2: hsl(0, 0%, 86%);
-  --clr-border-primary-on-bg-accent-2: hsl(0, 0%, 90%);
-  --clr-border-secondary-on-bg-accent-2: hsl(0, 0%, 80%);
+  --clr-bg-accent-2-hover: var(--clr-accent-2-hover);
+  --clr-txt-primary-on-bg-accent-2: #ffffff;
+  --clr-txt-secondary-on-bg-accent-2: #fff3e0;
+  --clr-border-primary-on-bg-accent-2: #ffcc80;
 
-  --clr-bg-error: hsla(0, 74%, 42%, 0.501);
+  --clr-bg-error: hsla(0, 74%, 42%, 0.1);
   --clr-txt-primary-on-bg-error: hsl(0, 74%, 42%);
   --clr-border-primary-on-bg-error: hsl(0, 74%, 42%);
 
-  --clr-bg-success: hsla(142, 72%, 29%, 0.5);
+  --clr-bg-success: hsla(142, 72%, 29%, 0.1);
   --clr-txt-primary-on-bg-success: hsl(142, 72%, 29%);
   --clr-border-primary-on-bg-success: hsl(142, 72%, 29%);
 
   --clr-black-rgb: 0, 0, 0;
-  --clr-accent-1-rgb: 99, 171, 69; // RGB for #009467
-  --clr-accent-2-rgb: 247, 146, 30; // RGB for #2196f3 (example)
+  --clr-accent-1-rgb: 46, 125, 50; // RGB for #2e7d32
+  --clr-accent-2-rgb: 230, 81, 0; // RGB for #e65100
 
   // Add RGB for text color on accent background if not already present
   --clr-txt-primary-on-accent-1: #ffffff;
